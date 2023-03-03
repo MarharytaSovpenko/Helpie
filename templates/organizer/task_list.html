@@ -46,7 +46,11 @@
 
   {% else %}
     <br>
-    <p>There are no tasks yet</p>
+    <p class="person-info">There are no tasks yet.</p>
+    <a href="{% url 'organizer:task-create' %}" class="btn btn-info link-to-page">
+      <strong> + new task </strong>
+    </a>
+
   {% endif %}
 
 {% endblock %}
