@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="h1">
+    Tasks
+  </h1>
+
+  {% block search %}
+    {% include "includes/search.html" %}
+  {% endblock %}
+
+  <br>
+  {% if task_list %}
+    <table class="table">
+      <tr>
+        <th> Create new tasks
+          <a href="{% url 'organizer:task-create' %}" class="btn btn-outline-light link-to-page">
+            <strong> + </strong>
+          </a>
+        </th>
+        <th>
+          <a href="{{ user.get_absolute_url }}" class="btn btn-outline-light link-to-page">
+            <strong>Go to my to-do list</strong>
+          </a>
+        </th>
+      </tr>
+
+      {% for task in task_list %}
+        <tr>
+          <td>
+              {{ task.description }}
+          </td>
+          <td>
+            {% if task in user.tasks.all %}
+              <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-info link-to-page">
+                Delete from my to-do list
+              </a>
+            {% else %}
+              <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-success link-to-page">
+                Add to my to-do list
+              </a>
+            {% endif %}
+          </td>
+        {% endfor %}
+    </table>
+
+  {% else %}
+    <br>
+    <p class="person-info">There are no tasks yet.</p>
+    <a href="{% url 'organizer:task-create' %}" class="btn btn-info link-to-page">
+      <strong> + new task </strong>
+    </a>
+
+  {% endif %}
+
+{% endblock %}

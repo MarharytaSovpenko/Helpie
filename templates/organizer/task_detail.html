@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    {{ task.description }}
+    <a href="{% url 'organizer:task-delete' pk=task.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'organizer:task-update' pk=task.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
+  </h1>
+  <p>Category: {{ task.description }}</p>
+  <h1>
+    Doers
+
+    {% if task in user.tasks.all %}
+      <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-danger link-to-page">
+        Delete from my to-do list
+      </a>
+    {% else %}
+      <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-success link-to-page">
+        Add to my to-do list
+      </a>
+    {% endif %}
+
+  </h1>
+  <hr>
+  <ul>
+    {% for doer in task.doers.all %}
+      <li>{{ doer.username }} ({{ doer.first_name }} {{ doer.last_name }})</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

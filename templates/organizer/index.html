@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if user.first_name %}
+    <h1 class="h1">Welcome to Helpie,</h1>
+    <h1 class="h1">
+      <a href="{{ user.get_absolute_url }}">
+        {{ user.first_name }}
+      </a>
+      <img src="https://i.postimg.cc/m2cyJYW1/wizard.jpg" alt="wizard">
+    </h1>
+  {% else %}
+    <h1 class="h1">Welcome to Helpie,</h1>
+    <h1 class="h1">
+      <a href="{{ user.get_absolute_url }}">
+        {{ user.get_username }}
+      </a>
+      <img src="https://i.postimg.cc/m2cyJYW1/wizard.jpg" alt="wizard">
+    </h1>
+  {% endif %}
+
+  <h2 class="sofia decor">
+    Here you'll find the magic of planning, management and delegation!
+  </h2>
+  <br>
+
+  <p class="indent">
+    Open
+    <a class="sofia h5" href="{% url 'organizer:task-list' %}">
+      All tasks
+    </a>
+    to see options for your to-do list. Feel free to create new tasks:)
+  </p>
+
+  <br>
+  <p class="indent">
+    Check your to-do list in
+    <a class="sofia h5" href="{{ user.get_absolute_url }}">
+      My tasks
+    </a>.
+    Benefit from delegation option to cope with more tasks
+    (*don't forget to tick yourself as doer in
+    <a  class="sofia h5" href="{% url 'organizer:info-create' %}">
+      info form
+    </a> to have access to notes).Optionally specify a task for yourself.
+  </p>
+
+  <br>
+  <p class="indent">
+    Check up the status of delegated tasks and edit task details in
+    <a class="sofia h5" href="{% url 'organizer:info-list' %}">
+      Shared tasks & Details.
+    </a>
+  </p>
+    {% if user.tasks %}
+      <ul>
+        <li>Now you have {{ num_tasks_to_do }} <strong>tasks:</strong> in
+          <a class="sofia h5" href="{{ user.get_absolute_url }}">
+            your to-do list
+          </a>
+          <img src="https://i.postimg.cc/MTZgQwdB/smiley1.jpg" alt="helpie">
+        </li>
+      </ul>
+    {% else %}
+      <p>
+        <a href="{% url 'organizer:task-list' %}" class="btn btn-info">
+          Let's create your to-do list! 🗒️
+        </a>
+      </p>
+
+    {% endif %}
+{% endblock %}

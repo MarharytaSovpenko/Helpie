@@ -1,0 +1,876 @@
+[
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 6,
+        "codename": "add_doer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 6,
+        "codename": "change_doer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 6,
+        "codename": "delete_doer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 6,
+        "codename": "view_doer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add category",
+        "content_type": 7,
+        "codename": "add_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change category",
+        "content_type": 7,
+        "codename": "change_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete category",
+        "content_type": 7,
+        "codename": "delete_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view category",
+        "content_type": 7,
+        "codename": "view_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add status",
+        "content_type": 8,
+        "codename": "add_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change status",
+        "content_type": 8,
+        "codename": "change_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete status",
+        "content_type": 8,
+        "codename": "delete_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view status",
+        "content_type": 8,
+        "codename": "view_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add task",
+        "content_type": 9,
+        "codename": "add_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change task",
+        "content_type": 9,
+        "codename": "change_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete task",
+        "content_type": 9,
+        "codename": "delete_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view task",
+        "content_type": 9,
+        "codename": "view_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add info",
+        "content_type": 10,
+        "codename": "add_info"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change info",
+        "content_type": 10,
+        "codename": "change_info"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete info",
+        "content_type": 10,
+        "codename": "delete_info"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view info",
+        "content_type": 10,
+        "codename": "view_info"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add importance",
+        "content_type": 8,
+        "codename": "add_importance"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change importance",
+        "content_type": 8,
+        "codename": "change_importance"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete importance",
+        "content_type": 8,
+        "codename": "delete_importance"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view importance",
+        "content_type": 8,
+        "codename": "view_importance"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add status",
+        "content_type": 11,
+        "codename": "add_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change status",
+        "content_type": 11,
+        "codename": "change_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete status",
+        "content_type": 11,
+        "codename": "delete_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view status",
+        "content_type": 11,
+        "codename": "view_status"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "organizer",
+        "model": "doer"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "organizer",
+        "model": "category"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "organizer",
+        "model": "importance"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "organizer",
+        "model": "task"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "organizer",
+        "model": "info"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "organizer",
+        "model": "status"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1b5xuul5ft3cv29l8u65heolx9cd5f91",
+    "fields": {
+        "session_data": ".eJxVjjsOwyAQRO9CHSFjYcO6TJ8zoF1YAvlgyeA0Ue4eW3KRtPPejOYtHK4tubXy4nIQk1Di9JsR-juXHYQbluss_VzakknuijxolZc58ON8uH8DCWva2oyoDdmgTKeZFGkNHYGPVntDECOxsWE0EXswhDxu1IMegMD6HnB_Vdane-WaWxXTYD9fv70-Fw:1pWb8P:fyJxuPxTEgqqIIBavmodb27SNENiuBZ1CGuAPfGiDWs",
+        "expire_date": "2023-03-13T10:53:33.518Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "lpr04tv0ja1931lvha3awd7ja7m3t3w6",
+    "fields": {
+        "session_data": ".eJxVjjsOwyAQRO9CHSFjYcO6TJ8zoF1YAvlgydhpotw9RnKRtPPejOYtHG5rclvlxeUgJqHE6Tcj9HcuDYQbluss_VzWJZNsijxolZc58ON8uH8DCWva24yoDdmgTKeZFGkNHYGPVntDECOxsWE0EXswhDzu1IMegMD6HrC9KtvTvXLNaxWT-nwBgeM92w:1pWcE2:mgQZCk5QpCb-B1tQ0ufx_xqSCWvFvbZuRsB4nkUYruQ",
+        "expire_date": "2023-03-13T12:03:26.511Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "psxbct6mhwd3331zxv8q2mfskr061ng9",
+    "fields": {
+        "session_data": ".eJxVjjsOwyAQRO9CHSFjYcO6TJ8zoF1YAvlgyeA0Ue4eW3KRtPPejOYtHK4tubXy4nIQk1Di9JsR-juXHYQbluss_VzakknuijxolZc58ON8uH8DCWva2oyoDdmgTKeZFGkNHYGPVntDECOxsWE0EXswhDxu1IMegMD6HnB_Vdane-WaWxXT8PkCges93w:1pWdTJ:sYQ59y1WyxH7TXSIzQNtLKA41KtNgip0sm9Rq5xfTQY",
+        "expire_date": "2023-03-13T13:23:17.297Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "wi9qzwnpfen7024zlyq3bk72g9b5y2eo",
+    "fields": {
+        "session_data": ".eJxVjjsOwyAQRO9CHSEbYcO6TJ8zoF1YAvlgyZg0Ue4eW3KRtPPejOYtHLY1uVZ5cTmISfTi9JsR-juXHYQbluss_VzWJZPcFXnQKi9z4Mf5cP8GEta0tRlRG7KhN51m6klr6Ah8tNobghiJjQ2jiajAEPK4UQ96AALrFeD-qrSne-Wa1yom9fkCgeU93A:1pWfJb:8HvEo0lxXfYn5wEx1sqU_TmjmclAIHF7cIlRxjyKF8g",
+        "expire_date": "2023-03-13T15:21:23.399Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "wy3alrk0ove7jibj3zpvys883z7qetmi",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGlYmF79O4zkF1YLP5AUlovxne3JD3odb5vJvMWDtdlcmvl2aUgRqHE4Tcj9HfODYQb5muRvuRlTiSbInda5aUEfpx3929gwjptbUbUhmxQptNMirSGjsBHq70hiJHY2DCYiD0YQh426kGfgMD6HrC9yuvTvVJNSxXj8fMFgec93Q:1pWwYe:zBCzWcSaP9bbFEJ0tl3fEy83aI7QZenw2YwIzcoMV4Y",
+        "expire_date": "2023-03-14T09:46:04.751Z"
+    }
+},
+{
+    "model": "organizer.importance",
+    "pk": 1,
+    "fields": {
+        "name": "very important"
+    }
+},
+{
+    "model": "organizer.importance",
+    "pk": 2,
+    "fields": {
+        "name": "fairly important"
+    }
+},
+{
+    "model": "organizer.importance",
+    "pk": 3,
+    "fields": {
+        "name": "important"
+    }
+},
+{
+    "model": "organizer.importance",
+    "pk": 4,
+    "fields": {
+        "name": "slightly important"
+    }
+},
+{
+    "model": "organizer.importance",
+    "pk": 5,
+    "fields": {
+        "name": "not important"
+    }
+},
+{
+    "model": "organizer.status",
+    "pk": 1,
+    "fields": {
+        "name": "Done"
+    }
+},
+{
+    "model": "organizer.status",
+    "pk": 2,
+    "fields": {
+        "name": "Not done yet"
+    }
+},
+{
+    "model": "organizer.doer",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$9e6FHaWLLTOJ6RSdxiwEyr$/usRlDFVWTlszSQfcajWyhFT8wqSiQbv/yNStcPDHUk=",
+        "last_login": "2023-03-02T23:06:04.704Z",
+        "is_superuser": true,
+        "username": "adminmag",
+        "first_name": "Margarita",
+        "last_name": "",
+        "email": "admi@ukr.net",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-02-26T17:41:47.610Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "organizer.doer",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$alj0zUO66EqjUPKijaXVXu$+XBAwHOEW9QLwpYcmw35y6NR1tSzkAoY5aSB9Od9RkI=",
+        "last_login": "2023-03-03T00:02:01.784Z",
+        "is_superuser": false,
+        "username": "Alex",
+        "first_name": "Oleksii",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-03-01T15:20:40.831Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "organizer.doer",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$nbTYjUokU4dB3aM30tQnXB$y0JnUWnT7Bk97IfeIDnjG7bLpfIf9zAuo8qTq0Qhi5A=",
+        "last_login": "2023-03-02T01:33:46.096Z",
+        "is_superuser": false,
+        "username": "melok",
+        "first_name": "Melanka",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-03-01T15:29:01.637Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "organizer.doer",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$7lsujeFeQcU16y1ejEWsZU$WbLyNaqb67o3/i/rKk9DtEaaQ/mVfFlGbRx58CuFes8=",
+        "last_login": "2023-03-02T01:04:56.416Z",
+        "is_superuser": false,
+        "username": "alanchik",
+        "first_name": "Alan",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-03-01T15:43:44.426Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "organizer.doer",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$2YgJmWV0SPHDPK2KyVX4Qj$WFigrEPbbPuvA6qztMKL45YZrNXdewm3UbOwAQUz29k=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "aleksik",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-03-02T23:05:46.858Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 1,
+    "fields": {
+        "description": "go shopping",
+        "doers": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 2,
+    "fields": {
+        "description": "take children to school",
+        "doers": []
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 3,
+    "fields": {
+        "description": "cook breakfast",
+        "doers": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 4,
+    "fields": {
+        "description": "cook lunch",
+        "doers": [
+            2
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 5,
+    "fields": {
+        "description": "cook dinner",
+        "doers": [
+            2
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 6,
+    "fields": {
+        "description": "wash the floor",
+        "doers": []
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 7,
+    "fields": {
+        "description": "wash the kitchen",
+        "doers": []
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 8,
+    "fields": {
+        "description": "go to supermarket",
+        "doers": [
+            2
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 9,
+    "fields": {
+        "description": "open a new bank account",
+        "doers": []
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 10,
+    "fields": {
+        "description": "send enquiry to kindergarten",
+        "doers": [
+            1
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 11,
+    "fields": {
+        "description": "teach children English",
+        "doers": [
+            1
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 12,
+    "fields": {
+        "description": "teach French",
+        "doers": [
+            1
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 13,
+    "fields": {
+        "description": "learn Czech",
+        "doers": [
+            1,
+            4
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 14,
+    "fields": {
+        "description": "organize a birthday party",
+        "doers": [
+            1
+        ]
+    }
+},
+{
+    "model": "organizer.task",
+    "pk": 15,
+    "fields": {
+        "description": "go to work",
+        "doers": [
+            1
+        ]
+    }
+},
+{
+    "model": "organizer.info",
+    "pk": 2,
+    "fields": {
+        "task_category": "shopping",
+        "importance": 4,
+        "details": "bananas 1kg and oranges 2kg",
+        "delegator": "Maggie",
+        "status": 2,
+        "doers": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "organizer.info",
+    "pk": 3,
+    "fields": {
+        "task_category": "birthday",
+        "importance": 1,
+        "details": "book a table in the children's cafe and buy a present for Malya",
+        "delegator": "Maggie",
+        "status": 2,
+        "doers": [
+            1,
+            2
+        ]
+    }
+}
+]

@@ -1,0 +1,57 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin-bottom: 30px;
+  font-family: sans-serif;
+}
+
+
+.header {
+
+  text-align: center;
+  border-radius: 7px;
+  background-color:paleturquoise;
+}
+
+
+.logo {
+  display: inline-block;
+  margin-right: 40px;
+  padding: 3px;
+  color: #fff;
+}
+
+.nav {
+  display: inline-block;
+  padding: 5px;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+.nav__item {
+  display: inline-block
+}
+
+.nav__link {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 10px;
+  padding: 10px 5px;
+  color: #fdc005;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: #ff964f;
+}
+
+.nav__link:active {
+  color: #ff7d28;
+}
