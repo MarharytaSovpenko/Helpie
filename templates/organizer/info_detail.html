@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="h1 sofia">
+    Task Info
+  </h1>
+  <div>
+    <table class="table">
+      <tr>
+        <th>Task category</th>
+        <th>Details</th>
+      </tr>
+
+      <tr>
+        <td>
+          {{ info.task_category }}
+        </td>
+        <td>
+          {{ info.details }}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <table class="table">
+      <tr>
+        <th>Doers</th>
+        <th>Delegator</th>
+      </tr>
+
+      <tr>
+        <td>
+          {% for doer in info.doers.all %}
+            {{  doer }} 🫡
+            <br>
+          {% endfor %}
+          </td>
+
+          <td>
+            {{ info.delegator }}
+          </td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <table class="table">
+      <tr>
+        <th>Importance</th>
+        <th>Status</th>
+      </tr>
+
+      <tr>
+        <td>
+          {{ info.importance }}
+        </td>
+
+        <td>
+          {{ info.status }}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <a href="{% url 'organizer:info-update' pk=info.id %}" class="btn btn-info">
+      Update
+  </a>
+
+  <a href="{% url 'organizer:info-delete' pk=info.id %}" class="btn btn-warning">
+       Delete
+  </a>
+{% endblock %}

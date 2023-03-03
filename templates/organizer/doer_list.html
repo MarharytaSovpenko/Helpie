@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <h1>
+      Users
+      <a href="{% url 'organizer:doer-create' %}" class="btn btn-primary link-to-page">
+        Create
+      </a>
+    </h1>
+
+    {% block search %}
+      {% include "includes/search.html" %}
+    {% endblock %}
+
+    {% if doer_list %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+      </tr>
+    {% for doer in doer_list %}
+      <tr>
+        <td>{{ doer.id }}</td>
+        <td><a href="{{ doer.get_absolute_url }}">{{ doer.username }} {% if user == doer %} (Me){% endif %}</a></td>
+        <td>{{ doer.first_name }}</td>
+        <td>{{ doer.last_name }}</td>
+      </tr>
+    {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no users yet.</p>
+    {% endif %}
+{% endblock %}

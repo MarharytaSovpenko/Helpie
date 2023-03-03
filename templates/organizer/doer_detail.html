@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="h1 sofia">
+    Username: {{ doer.username }}
+  </h1>
+
+  {% if user.first_name %}
+    <p class="person-info"><strong>First name:</strong> {{ doer.first_name }}</p>
+  {% endif %}
+  {% if user.last_name %}
+    <p class="person-info"><strong>Last name:</strong> {{ doer.last_name }}</p>
+  {% endif %}
+
+  <a href="{% url 'organizer:doer-update' pk=doer.id %}" class="btn btn-info">
+    Update my profile
+  </a>
+
+  <a href="{% url 'organizer:doer-delete' pk=doer.id %}" class="btn btn-warning">
+    Delete my account
+  </a>
+  <br>
+  <br>
+  <h4 class="h1">Tasks</h4>
+
+  {% for task in doer.tasks.all %}
+    <div class="mx-auto">
+
+      <table class="table">
+        <tr>
+          <th>Status</th>
+          <th class="col">Description</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>
+            <input class="checkbox" type="checkbox" value="" id="flexCheckChecked" />
+          </td>
+          <td>
+            {{ task.description }}
+          </td>
+          <td>
+            <a href="{% url 'organizer:info-create' %}" class="btn btn-info">
+              Share/Add task info
+            </a>
+          </td>
+          <td>
+            <a href="{% url 'organizer:task-delete' pk=task.id %}" class="btn btn-warning">
+              Delete
+            </a>
+          </td>
+      </table>
+    </div>
+
+  {% empty %}
+    <h4 class="sofia decor">You don't have any tasks yet.</h4>
+    <br>
+    <p>
+      <a href="{% url 'organizer:task-list' %}" class="btn btn-primary">
+        Create my to-do list
+      </a>
+    </p>
+  {% endfor %}
+{% endblock %}

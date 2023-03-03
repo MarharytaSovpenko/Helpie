@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if info_list %}
+     {% block search %}
+      {% include "includes/search.html" %}
+    {% endblock %}
+    {% for info in info_list %}
+      {% if user in info.doers.all %}
+      <br>
+        <table class="table">
+          <tr>
+            <th class="col"> Task category </th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          <tr>
+            <td>
+                {{ info }}
+            </td>
+          <td>
+            <a href="{% url 'organizer:info-detail' pk=info.id %}" class="btn btn-info link-to-page" >
+              See details
+            </a>
+          </td>
+
+          <td>
+            <a href="{% url 'organizer:info-delete' pk=info.id %}" class="btn btn-warning link-to-page">
+              Delete info
+            </a>
+          </td>
+        </table>
+      {% else %}
+        <br>
+        <p>
+          <a href="{% url 'organizer:info-create' %}" class="btn btn-info">
+            Create additional info for your tasks 🗒️
+          </a>
+        </p>
+      {% endif %}
+    {% endfor %}
+    {% else %}
+      <br>
+      <p>
+        <h4 class="decor sofia">
+          You don't have any additional info for your tasks yet.
+        </h4>
+        <br>
+        <a href="{% url 'organizer:info-create' %}" class="btn btn-info">
+          Create additional info for your tasks 🗒️
+        </a>
+      </p>
+  {% endif %}
+{% endblock %}
