@@ -36,7 +36,6 @@ class InfoListView(LoginRequiredMixin, generic.ListView):
     model = Info
     context_object_name = "info_list"
     template_name = "organizer/info_list.html"
-    paginate_by = 5
 
     def get_context_data(self, *, object_list=None, **kwargs) -> dict:
         context = super(InfoListView, self).get_context_data(**kwargs)
