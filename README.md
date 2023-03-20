@@ -8,7 +8,7 @@
    - mark tasks in your to-do list as done;
 
 
-## how to install the project >>>
+## how to run the project >>>
 
 1. Run the command below in your terminal
    - `git clone git@github.com:MarharytaSovpenko/Helpie.git`
