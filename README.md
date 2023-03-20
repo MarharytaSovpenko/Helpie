@@ -8,7 +8,7 @@
    - mark tasks in your to-do list as done;
 
 
-## how to run the project >>>
+## How to run the project >>>
 
 1. Run the command below in your terminal
    - `git clone git@github.com:MarharytaSovpenko/Helpie.git`
@@ -32,4 +32,4 @@
    - Login: Alex
    - Password: minadv123
 
-
+In this project you can also use environment variables(see example in .env.sample).
