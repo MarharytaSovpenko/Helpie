@@ -65,3 +65,7 @@ th {
 .decor {
   color: #c3affa;
 }
+
+.btn-secondary:disabled {
+  background-color: white;
+}

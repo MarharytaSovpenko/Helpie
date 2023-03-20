@@ -11,14 +11,17 @@
 
   <br>
   {% if task_list %}
-    <table class="table">
+    <table class="table table-hover">
       <tr>
-        <th> Create new tasks
+        <th>
+          <div class="description">
+          Create new tasks
           <a href="{% url 'organizer:task-create' %}" class="btn btn-outline-light link-to-page">
             <strong> + </strong>
           </a>
-        </th>
-        <th>
+            </div>
+{#        </th>#}
+{#        <th>#}
           <a href="{{ user.get_absolute_url }}" class="btn btn-outline-light link-to-page">
             <strong>Go to my to-do list</strong>
           </a>
@@ -28,29 +31,33 @@
       {% for task in task_list %}
         <tr>
           <td>
+          <div class="description">
               {{ task.description }}
-          </td>
-          <td>
+          </div>
+
             {% if task in user.tasks.all %}
-              <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-info link-to-page">
+
+
+              <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-info">
                 Delete from my to-do list
               </a>
             {% else %}
-              <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-success link-to-page">
+              <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-success">
                 Add to my to-do list
               </a>
+
+
             {% endif %}
           </td>
         {% endfor %}
+
     </table>
 
   {% else %}
     <br>
-    <p class="person-info">There are no tasks yet.</p>
-    <a href="{% url 'organizer:task-create' %}" class="btn btn-info link-to-page">
-      <strong> + new task </strong>
-    </a>
-
+    <h4  class="decor sofia">There are no such tasks yet. Let's create a new one <a href="{% url 'organizer:task-create' %}" class="btn btn-outline-info link-to-page">
+            <strong> + </strong>
+          </a></h4>
   {% endif %}
 
 {% endblock %}

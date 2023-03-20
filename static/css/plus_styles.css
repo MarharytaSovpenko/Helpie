@@ -55,3 +55,20 @@ body {
 .nav__link:active {
   color: #ff7d28;
 }
+
+.table-hover tbody tr:hover td {
+    background: linear-gradient(
+        45deg,
+        hsla(168, 85%, 52%, 0.5),
+        hsla(263, 88%, 45%, 0.5) 100%
+    );
+}
+
+.description {
+  display: inline-block;
+  width: 380px;
+}
+
+th, td {
+  border-style: hidden;
+}

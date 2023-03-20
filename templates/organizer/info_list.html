@@ -1,21 +1,45 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <br>
+  <a href="{% url 'organizer:info-create' %}" class="btn btn-info">
+    Create additional info for your tasks 🗒️
+  </a>
+
   {% if info_list %}
-     {% block search %}
-      {% include "includes/search.html" %}
-    {% endblock %}
     {% for info in info_list %}
       {% if user in info.doers.all %}
+        <br>
+        <br>
+        {% block search %}
+      {% include "includes/search.html" %}
+    {% endblock %}
       <br>
         <table class="table">
           <tr>
-            <th class="col"> Task category </th>
-            <th></th>
-            <th></th>
+            <th class="col-1">Status</th>
+            <th class="col-2"> Task category </th>
+            <th class="col-1"></th>
+            <th class="col-1"></th>
+
           </tr>
 
           <tr>
+            <td>
+              {% if info.status.name == "Done" %}
+                <button type="button" class="btn btn-outline-success btn-sm" disabled>✔️</button>
+              {% else %}
+                <button type="button" class="btn btn-secondary btn-sm" disabled>🕒</button>
+
+{#                <input class="checkbox" type="checkbox" value="" id="flexCheckDisabled" disabled/>#}
+{#                <input class="checkbox" type="text" placeholder="N" readonly>#}
+{#                <input type="checkbox" id="disabledTextInput" class="checkbox" placeholder="N">#}
+{#                  <input class="form-check-input" type="checkbox" value="Not done" id="flexCheckCheckedDisabled" checked disabled>#}
+
+
+              {% endif %}
+
+            </td>
             <td>
                 {{ info }}
             </td>
@@ -25,31 +49,31 @@
             </a>
           </td>
 
+
+
           <td>
             <a href="{% url 'organizer:info-delete' pk=info.id %}" class="btn btn-warning link-to-page">
               Delete info
             </a>
           </td>
         </table>
-      {% else %}
-        <br>
-        <p>
-          <a href="{% url 'organizer:info-create' %}" class="btn btn-info">
-            Create additional info for your tasks 🗒️
-          </a>
-        </p>
+{#      {% else %}#}
+{#        <br>#}
+{#        <p>#}
+{#          <a href="{% url 'organizer:info-create' %}" class="btn btn-info">#}
+{#            Create additional info for your tasks 🗒️#}
+{#          </a>#}
+{#        </p>#}
+
       {% endif %}
     {% endfor %}
     {% else %}
       <br>
       <p>
         <h4 class="decor sofia">
-          You don't have any additional info for your tasks yet.
+          You don't have any additional info for your task yet.
         </h4>
-        <br>
-        <a href="{% url 'organizer:info-create' %}" class="btn btn-info">
-          Create additional info for your tasks 🗒️
-        </a>
+
       </p>
   {% endif %}
 {% endblock %}
