@@ -40,7 +40,7 @@
     </a>🗒️
     Benefit from the delegation option to cope with more tasks
     (*don't forget to tick yourself as a doer in
-    <a  class="sofia h5" href="{% url 'organizer:info-create' %}">
+    <a class="sofia h5" href="{% url 'organizer:info-create' %}">
       info form
     </a> to have access to notes). Optionally specify a task for yourself.
   </p>
@@ -52,21 +52,21 @@
       Shared tasks & Details.
     </a>
   </p>
-    {% if user.tasks %}
-      <ul>
-        <li>Now you have {{ num_tasks_to_do }} <strong>tasks:</strong> on
-          <a class="sofia h5" href="{{ user.get_absolute_url }}">
-            your to-do list
-          </a>
-          <img src="https://i.postimg.cc/MTZgQwdB/smiley1.jpg" alt="helpie">
-        </li>
-      </ul>
-    {% else %}
-      <p>
-        <a href="{% url 'organizer:task-list' %}" class="btn btn-info">
-          Let's create your to-do list! 🗒️
+  {% if user.tasks %}
+    <ul>
+      <li>Now you have {{ num_tasks_to_do }} <strong>tasks:</strong> on
+        <a class="sofia h5" href="{{ user.get_absolute_url }}">
+          your to-do list
         </a>
-      </p>
+        <img src="https://i.postimg.cc/MTZgQwdB/smiley1.jpg" alt="helpie">
+      </li>
+    </ul>
+  {% else %}
+    <p>
+      <a href="{% url 'organizer:task-list' %}" class="btn btn-info">
+        Let's create your to-do list! 🗒️
+      </a>
+    </p>
 
-    {% endif %}
+  {% endif %}
 {% endblock %}

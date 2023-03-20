@@ -1,12 +1,11 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import QuerySet
 from django.http import HttpResponseRedirect, HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
-from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import Doer, Task, Info
 from .forms import (
     TaskForm,
     TaskSearchForm,
@@ -16,6 +15,7 @@ from .forms import (
     InfoSearchForm,
     DoerUpdateForm,
 )
+from .models import Doer, Task, Info
 
 
 @login_required

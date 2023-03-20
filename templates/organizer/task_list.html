@@ -15,13 +15,13 @@
       <tr>
         <th>
           <div class="description">
-          Create new tasks
-          <a href="{% url 'organizer:task-create' %}" class="btn btn-outline-light link-to-page">
-            <strong> + </strong>
-          </a>
-            </div>
-{#        </th>#}
-{#        <th>#}
+            Create new tasks
+            <a href="{% url 'organizer:task-create' %}" class="btn btn-outline-light link-to-page">
+              <strong> + </strong>
+            </a>
+          </div>
+          {#        </th>#}
+          {#        <th>#}
           <a href="{{ user.get_absolute_url }}" class="btn btn-outline-light link-to-page">
             <strong>Go to my to-do list</strong>
           </a>
@@ -30,34 +30,35 @@
 
       {% for task in task_list %}
         <tr>
-          <td>
+        <td>
           <div class="description">
-              {{ task.description }}
+            {{ task.description }}
           </div>
 
-            {% if task in user.tasks.all %}
+          {% if task in user.tasks.all %}
 
 
-              <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-info">
-                Delete from my to-do list
-              </a>
-            {% else %}
-              <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-success">
-                Add to my to-do list
-              </a>
+            <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-info">
+              Delete from my to-do list
+            </a>
+          {% else %}
+            <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-success">
+              Add to my to-do list
+            </a>
 
 
-            {% endif %}
-          </td>
-        {% endfor %}
+          {% endif %}
+        </td>
+      {% endfor %}
 
     </table>
 
   {% else %}
     <br>
-    <h4  class="decor sofia">There are no such tasks yet. Let's create a new one <a href="{% url 'organizer:task-create' %}" class="btn btn-outline-info link-to-page">
-            <strong> + </strong>
-          </a></h4>
+    <h4 class="decor sofia">There are no such tasks yet. Let's create a new one <a
+        href="{% url 'organizer:task-create' %}" class="btn btn-outline-info link-to-page">
+      <strong> + </strong>
+    </a></h4>
   {% endif %}
 
 {% endblock %}

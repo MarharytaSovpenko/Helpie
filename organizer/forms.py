@@ -3,6 +3,7 @@ from typing import Optional
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
+
 from organizer.models import Info, Doer, Task
 
 
