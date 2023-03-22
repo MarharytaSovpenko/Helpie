@@ -35,4 +35,4 @@ It gives you the following opportunities:
 - Login: Alex
 - Password: minadv123
 
-In this project you can also use environment variables (see example in .env.sample).
+In this project you should also use environment variables. Create .env file and fill it with variables from .env.sample.

@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import migrations
 
 
@@ -41,22 +42,25 @@ def load_initial_data(apps, schema_editor):
         password="minadv123",
     )
 
+    doer1 = get_user_model().objects.get(pk=1)
+    doer2 = get_user_model().objects.get(pk=2)
+
     info_model = apps.get_model('organizer', 'Info')
     info_model.objects.create(
         task_category="shopping",
-        importance=4,
+        importance=importance_model.objects.get(pk=4),
         details="bananas 1kg and oranges 2kg",
         delegator="Maggie",
-        doers=[1, 2],
-        status=2
+        doers=[doer1, doer2],
+        status=status_model.objects.get(pk=2)
     )
     info_model.objects.create(
         task_category="birthday",
-        importance=1,
+        importance=importance_model.objects.get(pk=1),
         details="book a table in the children's cafe and buy a present for Malya",
         delegator="Maggie",
-        doers=[1, 2],
-        status=2
+        doers=[doer1, doer2],
+        status=status_model.objects.get(pk=2)
     )
 
 
