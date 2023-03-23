@@ -44,24 +44,28 @@ def load_initial_data(apps, schema_editor):
 
     doer1 = get_user_model().objects.get(pk=1)
     doer2 = get_user_model().objects.get(pk=2)
+    importance1 = importance_model.objects.get(pk=1)
+    importance4 = importance_model.objects.get(pk=4)
+    status2 = status_model.objects.get(pk=2)
 
     info_model = apps.get_model('organizer', 'Info')
-    info_model.objects.create(
+    info_1 = info_model.objects.create(
         task_category="shopping",
-        importance=importance_model.objects.get(pk=4),
+        importance=importance4,
         details="bananas 1kg and oranges 2kg",
         delegator="Maggie",
-        doers=[doer1, doer2],
-        status=status_model.objects.get(pk=2)
+        status=status2
     )
-    info_model.objects.create(
+    info_1.doers.add(doer1, doer2)
+
+    info_2 = info_model.objects.create(
         task_category="birthday",
-        importance=importance_model.objects.get(pk=1),
+        importance=importance1,
         details="book a table in the children's cafe and buy a present for Malya",
         delegator="Maggie",
-        doers=[doer1, doer2],
-        status=status_model.objects.get(pk=2)
+        status=status2
     )
+    info_2.doers.add(doer1, doer2)
 
 
 class Migration(migrations.Migration):

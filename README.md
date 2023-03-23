@@ -7,7 +7,7 @@ It gives you the following opportunities:
 - add information about the task including its category, importance level, details, delegator, doer and status(whether
   it's done or not);
 - delegate tasks from your to-do list to other users creating the appropriate task info;
-- mark tasks in your to-do list as done;
+- mark tasks in task details as done;
 
 ## How to run the project >>>
 
