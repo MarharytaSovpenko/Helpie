@@ -1,4 +1,4 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth.hashers import make_password
 from django.db import migrations
 
 
@@ -34,38 +34,17 @@ def load_initial_data(apps, schema_editor):
     doer_model.objects.create(
         username="adminmag",
         email="admi@ukr.net",
-        password="minadv12",
+        password=make_password("minadv12")
     )
     doer_model.objects.create(
         username="Alex",
         email="alex@ukr.net",
-        password="minadv123",
+        password=make_password("minadv123")
     )
 
-    doer1 = get_user_model().objects.get(pk=1)
-    doer2 = get_user_model().objects.get(pk=2)
-    importance1 = importance_model.objects.get(pk=1)
-    importance4 = importance_model.objects.get(pk=4)
-    status2 = status_model.objects.get(pk=2)
 
-    info_model = apps.get_model('organizer', 'Info')
-    info_1 = info_model.objects.create(
-        task_category="shopping",
-        importance=importance4,
-        details="bananas 1kg and oranges 2kg",
-        delegator="Maggie",
-        status=status2
-    )
-    info_1.doers.add(doer1, doer2)
-
-    info_2 = info_model.objects.create(
-        task_category="birthday",
-        importance=importance1,
-        details="book a table in the children's cafe and buy a present for Malya",
-        delegator="Maggie",
-        status=status2
-    )
-    info_2.doers.add(doer1, doer2)
+def reverse_func(apps, schema_editor):
+    pass
 
 
 class Migration(migrations.Migration):
@@ -73,4 +52,4 @@ class Migration(migrations.Migration):
         ("organizer", "0001_initial"),
     ]
 
-    operations = [migrations.RunPython(load_initial_data)]
+    operations = [migrations.RunPython(load_initial_data, reverse_func)]

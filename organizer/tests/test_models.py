@@ -7,7 +7,7 @@ from organizer.models import Importance, Info, Status
 class ModelTests(TestCase):
     def test_importance_str(self):
         importance = Importance.objects.create(
-            name="very important"
+            name="test"
         )
 
         self.assertEqual(
@@ -28,12 +28,12 @@ class ModelTests(TestCase):
             doer.username
         )
 
-    def test_car_str(self):
+    def test_info_str(self):
         importance = Importance.objects.create(
-            name="very important"
+            name="no"
         )
         status = Status.objects.create(
-            name="Done"
+            name="no"
         )
 
         info = Info.objects.create(

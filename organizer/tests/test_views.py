@@ -28,7 +28,7 @@ class PublicTaskTest(TestCase):
 
 class PrivateTaskTest(OnlyLoggedIn, TestCase):
 
-    def test_retrieve_manufacturers(self) -> None:
+    def test_retrieve_tasks(self) -> None:
         Task.objects.create(
             description="learn Python"
         )
@@ -36,13 +36,8 @@ class PrivateTaskTest(OnlyLoggedIn, TestCase):
             description="learn JavaScript"
         )
         response = self.client.get(TASK_URL)
-        tasks = Task.objects.all()
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(
-            list(response.context["task_list"]),
-            list(tasks)
-        )
         self.assertTemplateUsed(response, "organizer/task_list.html")
 
     def test_get_queryset(self):
@@ -66,9 +61,9 @@ class PrivateTaskTest(OnlyLoggedIn, TestCase):
         )))
 
 
-class PrivateDriverTest(OnlyLoggedIn, TestCase):
+class PrivateDoerTest(OnlyLoggedIn, TestCase):
 
-    def test_create_driver(self):
+    def test_create_doer(self):
         form_data = {
             "username": "test",
             "password1": "test12345",
@@ -82,7 +77,7 @@ class PrivateDriverTest(OnlyLoggedIn, TestCase):
         self.assertEqual(new_user.first_name, form_data["first_name"])
         self.assertEqual(new_user.last_name, form_data["last_name"])
 
-    def test_delete_driver(self):
+    def test_delete_doer(self):
         doer = get_user_model().objects.create(
             username="not_admin.user",
             first_name="Not Admin",

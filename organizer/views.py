@@ -1,8 +1,7 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import QuerySet
-from django.http import HttpResponseRedirect, HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -18,18 +17,18 @@ from .forms import (
 from .models import Doer, Task, Info
 
 
-@login_required
-def index(request: HttpRequest) -> HttpResponse:
-    """View function for the home page of the site."""
+class IndexView(LoginRequiredMixin, generic.View):
+    @staticmethod
+    def get(request: HttpRequest) -> HttpResponse:
+        """View function for the home page of the site."""
+        doer = Doer.objects.get(id=request.user.id)
+        num_tasks_to_do = doer.tasks.count()
 
-    doer = Doer.objects.get(id=request.user.id)
-    num_tasks_to_do = doer.tasks.count()
+        context = {
+            "num_tasks_to_do": num_tasks_to_do,
+        }
 
-    context = {
-        "num_tasks_to_do": num_tasks_to_do,
-    }
-
-    return render(request, "organizer/index.html", context=context)
+        return render(request, "organizer/index.html", context=context)
 
 
 class InfoListView(LoginRequiredMixin, generic.ListView):
@@ -46,7 +45,7 @@ class InfoListView(LoginRequiredMixin, generic.ListView):
 
         return context
 
-    def get_queryset(self) -> QuerySet:
+    def get_queryset(self) -> QuerySet[Info]:
         queryset = Info.objects.select_related("importance", "status")
         form = InfoSearchForm(self.request.GET)
         if form.is_valid():
@@ -91,7 +90,7 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
 
         return context
 
-    def get_queryset(self) -> QuerySet:
+    def get_queryset(self) -> QuerySet[Task]:
         queryset = Task.objects.all()
         form = TaskSearchForm(self.request.GET)
         if form.is_valid():
@@ -136,7 +135,7 @@ class DoerListView(LoginRequiredMixin, generic.ListView):
 
         return context
 
-    def get_queryset(self) -> QuerySet:
+    def get_queryset(self) -> QuerySet[Doer]:
         queryset = Doer.objects.prefetch_related("tasks", "info__importance", "info__status")
         form = DoerSearchForm(self.request.GET)
         if form.is_valid():
@@ -169,23 +168,28 @@ class DoerDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("organizer:index")
 
 
-@login_required
-def toggle_assign_to_task(request: HttpRequest, pk: int) -> HttpResponse:
-    doer = Doer.objects.get(id=request.user.id)
-    if (
-            Task.objects.get(id=pk) in doer.tasks.all()
-    ):
-        doer.tasks.remove(pk)
-    else:
-        doer.tasks.add(pk)
-    return HttpResponseRedirect(reverse_lazy("organizer:task-list"))
+class ToggleAssignToTaskView(LoginRequiredMixin, generic.View):
+    @staticmethod
+    def post(request: HttpRequest, pk: int) -> HttpResponse:
+        doer = get_object_or_404(Doer, id=request.user.id)
+        task = get_object_or_404(Task, id=pk)
+
+        if task in doer.tasks.all():
+            doer.tasks.remove(task)
+        else:
+            doer.tasks.add(task)
+
+        return redirect(reverse_lazy("organizer:task-list"))
 
 
-@login_required
-def toggle_delete_from_list(request: HttpRequest, pk: int) -> HttpResponse:
-    doer = Doer.objects.get(id=request.user.id)
-    if (
-            Task.objects.get(id=pk) in doer.tasks.all()
-    ):
-        doer.tasks.remove(pk)
-    return HttpResponseRedirect(reverse_lazy("organizer:doer-detail", kwargs={'pk': doer.id}))
+class ToggleDeleteFromListView(LoginRequiredMixin, generic.View):
+
+    @staticmethod
+    def post(request: HttpRequest, pk: int) -> HttpResponse:
+        doer = get_object_or_404(Doer, id=request.user.id)
+        task = get_object_or_404(Task, id=pk)
+
+        if task in doer.tasks.all():
+            doer.tasks.remove(task)
+
+        return redirect(reverse_lazy("organizer:doer-detail", kwargs={'pk': doer.id}))
