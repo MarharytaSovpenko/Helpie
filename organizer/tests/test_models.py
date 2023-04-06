@@ -5,43 +5,31 @@ from organizer.models import Importance, Info, Status
 
 
 class ModelTests(TestCase):
-    def test_importance_str(self):
-        importance = Importance.objects.create(
-            name="test"
-        )
-
-        self.assertEqual(
-            str(importance),
-            importance.name
-        )
-
-    def test_doer_str(self):
-        doer = get_user_model().objects.create_user(
+    def setUp(self):
+        self.importance = Importance.objects.create(name="high")
+        self.doer = get_user_model().objects.create_user(
             username="test",
             password="test12345",
             first_name="testi",
             last_name="testy"
         )
-
-        self.assertEqual(
-            str(doer),
-            doer.username
-        )
-
-    def test_info_str(self):
-        importance = Importance.objects.create(
-            name="no"
-        )
-        status = Status.objects.create(
-            name="no"
-        )
-
-        info = Info.objects.create(
+        self.status = Status.objects.create(name="no")
+        self.info = Info.objects.create(
             task_category="shopping",
-            importance=importance,
+            importance=self.importance,
             details="apples and bananas",
             delegator="Maggie",
-            status=status
+            status=self.status
         )
 
-        self.assertEqual(str(info), f"{info.task_category} ({info.importance})")
+    def test_importance_str(self):
+        self.assertEqual(str(self.importance), self.importance.name)
+
+    def test_doer_str(self):
+        self.assertEqual(str(self.doer), self.doer.username)
+
+    def test_info_str(self):
+        self.assertEqual(
+            str(self.info),
+            f"{self.info.task_category} ({self.info.importance})"
+        )

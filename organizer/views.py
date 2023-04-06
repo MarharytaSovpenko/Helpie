@@ -136,7 +136,9 @@ class DoerListView(LoginRequiredMixin, generic.ListView):
         return context
 
     def get_queryset(self) -> QuerySet[Doer]:
-        queryset = Doer.objects.prefetch_related("tasks", "info__importance", "info__status")
+        queryset = Doer.objects.prefetch_related(
+            "tasks", "info__importance", "info__status"
+        )
         form = DoerSearchForm(self.request.GET)
         if form.is_valid():
             return queryset.filter(
@@ -192,4 +194,6 @@ class ToggleDeleteFromListView(LoginRequiredMixin, generic.View):
         if task in doer.tasks.all():
             doer.tasks.remove(task)
 
-        return redirect(reverse_lazy("organizer:doer-detail", kwargs={'pk': doer.id}))
+        return redirect(
+            reverse_lazy("organizer:doer-detail", kwargs={"pk": doer.id})
+        )

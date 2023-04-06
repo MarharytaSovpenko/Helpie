@@ -10,7 +10,7 @@ from organizer.models import Info, Doer, Task
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ('description',)
+        fields = ("description",)
 
 
 class DoerCreationForm(UserCreationForm):
@@ -70,5 +70,7 @@ class InfoSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Search by task category"})
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by task category"}
+        )
     )

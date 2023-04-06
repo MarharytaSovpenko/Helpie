@@ -6,19 +6,19 @@ from django.urls import reverse
 class Importance(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 
 class Status(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 
 class Doer(AbstractUser):
-    def __str__(self):
+    def __str__(self) -> str:
         return self.username
 
     def get_absolute_url(self):
@@ -29,7 +29,7 @@ class Task(models.Model):
     description = models.CharField(max_length=255)
     doers = models.ManyToManyField(Doer, related_name="tasks")
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.description
 
     class Meta:
@@ -49,5 +49,5 @@ class Info(models.Model):
         verbose_name_plural = "info"
         ordering = ["importance__id"]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.task_category} ({self.importance})"
