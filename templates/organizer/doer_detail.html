@@ -44,9 +44,10 @@
             </a>
           </td>
           <td>
-            <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-warning">
-              Remove
-            </a>
+            <form action="{% url 'organizer:toggle-delete-from-list' pk=task.id %}" method="post">
+              {% csrf_token %}
+              <input type="submit" value="Remove" class="btn btn-warning">
+            </form>
           </td>
         </tr>
       </table>

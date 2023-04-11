@@ -36,16 +36,15 @@
           </div>
 
           {% if task in user.tasks.all %}
-
-
-            <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-info">
-              Delete from my to-do list
-            </a>
+            <form action="{% url 'organizer:toggle-delete-from-list' pk=task.id %}" method="post" class="btn btn-info">
+              {% csrf_token %}
+              <input type="submit" value="Delete from my to-do list" class="btn btn-info btn-sm">
+            </form>
           {% else %}
-            <a href="{% url 'organizer:toggle-task-assign' pk=task.id %}" class="btn btn-success">
-              Add to my to-do list
-            </a>
-
+            <form action="{% url 'organizer:toggle-task-assign' pk=task.id %}" method="post" class="btn btn-success">
+              {% csrf_token %}
+              <input type="submit" value="Add to my to-do list" class="btn btn-success btn-sm">
+            </form>
 
           {% endif %}
         </td>
