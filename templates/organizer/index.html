@@ -10,8 +10,8 @@
       <img src="https://i.postimg.cc/m2cyJYW1/wizard.jpg" alt="wizard">
     </h1>
   {% else %}
-    <h1 class="h1">Welcome to Helpie,</h1>
     <h1 class="h1">
+      Welcome to Helpie,
       <a href="{{ user.get_absolute_url }}">
         {{ user.get_username }}
       </a>
@@ -37,36 +37,36 @@
     Check your to-do list in
     <a class="sofia h5" href="{{ user.get_absolute_url }}">
       My tasks
-    </a>.
-    Benefit from delegation option to cope with more tasks
-    (*don't forget to tick yourself as doer in
-    <a  class="sofia h5" href="{% url 'organizer:info-create' %}">
+    </a>🗒️
+    Benefit from the delegation option to cope with more tasks
+    (*don't forget to tick yourself as a doer in
+    <a class="sofia h5" href="{% url 'organizer:info-create' %}">
       info form
-    </a> to have access to notes).Optionally specify a task for yourself.
+    </a> to have access to notes). Optionally specify a task for yourself.
   </p>
 
   <br>
   <p class="indent">
-    Check up the status of delegated tasks and edit task details in
+    Check up on the status of delegated tasks and edit task details in
     <a class="sofia h5" href="{% url 'organizer:info-list' %}">
       Shared tasks & Details.
     </a>
   </p>
-    {% if user.tasks %}
-      <ul>
-        <li>Now you have {{ num_tasks_to_do }} <strong>tasks:</strong> in
-          <a class="sofia h5" href="{{ user.get_absolute_url }}">
-            your to-do list
-          </a>
-          <img src="https://i.postimg.cc/MTZgQwdB/smiley1.jpg" alt="helpie">
-        </li>
-      </ul>
-    {% else %}
-      <p>
-        <a href="{% url 'organizer:task-list' %}" class="btn btn-info">
-          Let's create your to-do list! 🗒️
+  {% if user.tasks %}
+    <ul>
+      <li>Now you have {{ num_tasks_to_do }} <strong>task(s)</strong> on
+        <a class="sofia h5" href="{{ user.get_absolute_url }}">
+          your to-do list
         </a>
-      </p>
+        <img src="https://i.postimg.cc/MTZgQwdB/smiley1.jpg" alt="helpie">
+      </li>
+    </ul>
+  {% else %}
+    <p>
+      <a href="{% url 'organizer:task-list' %}" class="btn btn-info">
+        Let's create your to-do list! 🗒️
+      </a>
+    </p>
 
-    {% endif %}
+  {% endif %}
 {% endblock %}

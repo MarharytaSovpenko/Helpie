@@ -1,67 +1,71 @@
 
 +
-
-
 .link-to-page {
-  float: right;
-  margin: 0 2px 0 2px;
+    float: right;
+    margin: 0 2px 0 2px;
 }
 
 .person-info {
-  color: #c3affa;
-  font-family: "Sofia", sans-serif;
-  font-size: 30px;
+    color: #c3affa;
+    font-family: "Sofia", sans-serif;
+    font-size: 30px;
 }
 
 .checkbox {
-  margin-left: 7px;
-  height: 30px;
-  width: 30px;
+    margin-left: 7px;
+    height: 30px;
+    width: 30px;
 }
 
 .space {
-  color: transparent;
+    color: transparent;
 }
 
 tr:nth-child(odd) {
-  background-color: #b2ebf2;
+    background-color: #b2ebf2;
 }
 
 tr:nth-child(even) {
-  background-color: #e0f7fa;
+    background-color: #e0f7fa;
 }
+
 th {
-  background-color: #80deea;
-  color: white;
+    background-color: #80deea;
+    color: white;
 }
 
 .sofia {
-  font-family: "Sofia", sans-serif;;
+    font-family: "Sofia", sans-serif;;
 }
 
 .h1 {
-  font-weight: 550;
-  color: #89CFF0;
+    font-weight: 550;
+    color: #89CFF0;
 }
+
 .planner {
-  margin-top: 2%;
-  margin-left: 55%;
-  position: fixed;
+    margin-top: 2%;
+    margin-left: 55%;
+    position: fixed;
 }
 
 .fixed-bottom {
-  border-radius: 7px;
-  background-color: #ead8ff;
-  padding: 7px;
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
+    border-radius: 7px;
+    background-color: #ead8ff;
+    padding: 7px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
 }
 
 .indent {
-  text-indent: 20px;
+    text-indent: 20px;
 }
 
 .decor {
-  color: #c3affa;
+    color: #c3affa;
+}
+
+.btn-secondary:disabled {
+    background-color: white;
 }

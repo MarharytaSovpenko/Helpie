@@ -3,18 +3,14 @@ from typing import Optional
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
+
 from organizer.models import Info, Doer, Task
 
 
 class TaskForm(forms.ModelForm):
-    doers = forms.ModelMultipleChoiceField(
-        queryset=get_user_model().objects.all(),
-        widget=forms.CheckboxSelectMultiple,
-    )
-
     class Meta:
         model = Task
-        fields = "__all__"
+        fields = ("description",)
 
 
 class DoerCreationForm(UserCreationForm):
@@ -54,6 +50,11 @@ class TaskSearchForm(forms.Form):
 
 
 class InfoForm(forms.ModelForm):
+    delegator = forms.CharField(
+        widget=forms.TextInput(attrs={
+            "placeholder": "Please type your username or full name"
+        })
+    )
     doers = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
         widget=forms.CheckboxSelectMultiple,
@@ -69,5 +70,7 @@ class InfoSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Search by task category"})
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by task category"}
+        )
     )

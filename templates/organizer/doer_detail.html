@@ -24,20 +24,18 @@
   <h4 class="h1">Tasks</h4>
 
   {% for task in doer.tasks.all %}
-    <div class="mx-auto">
+
+    <div>
+
 
       <table class="table">
         <tr>
-          <th>Status</th>
-          <th class="col">Description</th>
-          <th></th>
-          <th></th>
+          <th scope="col" class="col-sm-3 text-center">Description</th>
+          <th scope="col" class="col-sm-3"></th>
+          <th scope="col" class="col-sm-1"></th>
         </tr>
         <tr>
-          <td>
-            <input class="checkbox" type="checkbox" value="" id="flexCheckChecked" />
-          </td>
-          <td>
+          <td class="text-center">
             {{ task.description }}
           </td>
           <td>
@@ -46,10 +44,12 @@
             </a>
           </td>
           <td>
-            <a href="{% url 'organizer:task-delete' pk=task.id %}" class="btn btn-warning">
-              Delete
-            </a>
+            <form action="{% url 'organizer:toggle-delete-from-list' pk=task.id %}" method="post">
+              {% csrf_token %}
+              <input type="submit" value="Remove" class="btn btn-warning">
+            </form>
           </td>
+        </tr>
       </table>
     </div>
 

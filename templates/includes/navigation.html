@@ -1,29 +1,29 @@
 <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="{% url 'organizer:task-list' %}" class="nav__link">
-              All tasks
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="{{ user.get_absolute_url }}" class="nav__link">
-              My tasks
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="{% url 'organizer:info-list' %}" class="nav__link">
-              Shared tasks & Details
-            </a>
-          </li>
+  <ul class="nav__list">
+    <li class="nav__item">
+      <a href="{% url 'organizer:task-list' %}" class="nav__link">
+        All tasks
+      </a>
+    </li>
+    <li class="nav__item">
+      <a href="{{ user.get_absolute_url }}" class="nav__link">
+        My tasks
+      </a>
+    </li>
+    <li class="nav__item">
+      <a href="{% url 'organizer:info-list' %}" class="nav__link">
+        Shared tasks & Details
+      </a>
+    </li>
 
-          <li class="nav__item">
-            {% if user.is_authenticated %}
-              <span class="space">more extra</span>
-              <a href="{% url 'logout'%}?next={{request.path}}">Log out </a>
-              <img src="https://i.postimg.cc/dQdffv9M/exit.jpg" alt="home_page">
-            {% else %}
-              <a href="{% url 'organizer:doer-create' %}" class="nav__link">Sign Up</a>
-            {% endif %}
-          </li>
-        </ul>
+    <li class="nav__item">
+      {% if user.is_authenticated %}
+        <span class="space">more extra</span>
+        <a href="{% url 'logout' %}?next={{ request.path }}">Log out </a>
+        <img src="https://i.postimg.cc/dQdffv9M/exit.jpg" alt="home_page">
+      {% else %}
+        <a href="{% url 'organizer:doer-create' %}" class="nav__link">Sign Up</a>
+      {% endif %}
+    </li>
+  </ul>
 </nav>
